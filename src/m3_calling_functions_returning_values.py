@@ -296,12 +296,24 @@ def run_test_fancy_sums_of_digits():
     # your 2nd and 3rd tests but READ THOSE TEST CASES CAREFULLY
     # in the doc-string to be sure that you understand the specification.
     # ------------------------------------------------------------------
-    one = 2 ** 1000
-    s1 = sum_of_digits(one)
-    two = 2 ** 999
-    s2 = sum_of_digits(two)
-    big = s1 ** s2
-    return sum_of_digits(big)
+
+    # Test 1
+    expected = 12
+    answer = fancy_sums_of_digits(10)
+    print('Test 1 expected', expected)
+    print('        actual:  ', answer)
+
+    # Test 2
+    expected = 12
+    answer = fancy_sums_of_digits(10)
+    print('Test 2 expected', expected)
+    print('        actual:  ', answer)
+
+    # Test 3
+    expected = 12
+    answer = fancy_sums_of_digits(10)
+    print('Test 3 expected', expected)
+    print('        actual:  ', answer)
 
 def fancy_sums_of_digits(n):
     """
@@ -328,6 +340,12 @@ def fancy_sums_of_digits(n):
             -- so this function returns 124309.
     """
 
+    x = n ** 1000
+    s1 = sum_of_digits(x)
+    y = n ** 999
+    s2 = sum_of_digits(y)
+    sum = s1 ** s2
+    return sum_of_digits(sum)
 
     # ------------------------------------------------------------------
     # TODO: 8. Implement and test this function.
