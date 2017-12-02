@@ -64,7 +64,7 @@ def sum_cosines(n):
     for k in range(n):
         total = total + (math.cos(k+1))
 
-    return total
+    return total+1
 
     # ------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
