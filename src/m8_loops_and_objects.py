@@ -18,9 +18,9 @@ def main():
     #print_sequence1()
     #draw_circles1()
     #print_sequence2()
-    #draw_circles2()
+    draw_circles2()
     #print_sequence3()
-    print_cosines()
+    #print_cosines()
 
 def print_sequence1():
     """
@@ -103,8 +103,12 @@ def print_sequence2():
     print('Running print_sequence2:')
     print('--------------------------------------------------')
 
-    for i in range(50, 400, 20):
-        print(i)
+
+    for k in range(18):
+        value = 50 + 20*k
+        print (value)
+
+
 
 def draw_circles2():
     """
@@ -122,14 +126,15 @@ def draw_circles2():
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # ------------------------------------------------------------------
 
-    rg.RoseWindow(400,400)
+    window = rg.RoseWindow(400,400)
 
     center = rg.Point(200, 200)
-    x = print_sequence2()
+
     for k in range(21):
         radius = 10
-        color = rg.Circle.fill_color('blue')
-        circle = rg.Circle(x, 100)
+        center = rg.Point(50+20*k, 100)
+        circle = rg.Circle(center, radius)
+        circle.fill_color = 'blue'
         circle.attach_to(window)
         window.render(0.05)  # Pauses for 0.05 seconds after rendering.
 
