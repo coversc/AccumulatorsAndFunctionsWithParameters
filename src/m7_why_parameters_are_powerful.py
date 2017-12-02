@@ -12,8 +12,8 @@ def main():
     """ Calls the   TEST   functions in this module. """
     #run_test_draw_circles()
     # Un-comment the next lines when you are ready to use them.
-    run_test_better_draw_circles()
-    #run_test_even_better_draw_circles()
+    #run_test_better_draw_circles()
+    run_test_even_better_draw_circles()
 
 
 # ----------------------------------------------------------------------
@@ -103,10 +103,9 @@ def  run_test_better_draw_circles():
 def  better_draw_circles():
     window = rg.RoseWindow(400, 400)
 
-    radius = 0
     center = rg.Point(200, 200)
     for k in range(12):
-        circle = rg.Circle(center, k+k)
+        circle = rg.Circle(center, 10*k)
         circle.attach_to(window)
         window.render(0.05)  # Pauses for 0.05 seconds after rendering.
 
@@ -147,21 +146,22 @@ def  run_test_even_better_draw_circles():
     print('--------------------------------------------------')
     print('Testing  draw_circles:  See graphics window')
     print('--------------------------------------------------')
-    even_better_draw_circles()
+    even_better_draw_circles(21)
 
-def  even_better_draw_circles():
+def  even_better_draw_circles(n):
 
     window = rg.RoseWindow(400, 400)
 
-    fill_color = rg.Circle.fill_color('blue')
-    thickness = rg.Circle.outline_thickness('10')
-    outline_color = rg.Circle.outline_color('pink')
-    for k in range(21):
-        circle = rg.Circle(fill_color)
-        circle = rg.Circle(thickness)
-        circle = rg.Circle(outline_color)
+
+    for k in range(n):
+        center = rg.Point(10*k, 50+k)
+        radius = 10
+        speed = 5*n
+        circle = rg.Circle(center, radius +k)
         circle.attach_to(window)
         window.render(0.05)  # Pauses for 0.05 seconds after rendering.
+
+
 
     window.close_on_mouse_click()
 
