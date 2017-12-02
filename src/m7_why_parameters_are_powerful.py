@@ -2,18 +2,18 @@
 This module lets you experience the POWER of FUNCTIONS and PARAMETERS.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Caitlin Coverstone.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_draw_circles()
+    #run_test_draw_circles()
     # Un-comment the next lines when you are ready to use them.
-    # run_test_better_draw_circles()
-    # run_test_even_better_draw_circles()
+    #run_test_better_draw_circles()
+    run_test_even_better_draw_circles()
 
 
 # ----------------------------------------------------------------------
@@ -93,6 +93,24 @@ def draw_circles():
 #   better_draw_circles  and  run_test_better_draw_circles.
 # ----------------------------------------------------------------------
 
+def  run_test_better_draw_circles():
+    print()
+    print('--------------------------------------------------')
+    print('Testing  draw_circles:  See graphics window')
+    print('--------------------------------------------------')
+    better_draw_circles()
+
+def  better_draw_circles():
+    window = rg.RoseWindow(400, 400)
+
+    radius = rg.Line(100, 300)
+    for k in range(12):
+        circle = rg.Circle.radius(k+k)
+        circle.attach_to(window)
+        window.render(0.05)  # Pauses for 0.05 seconds after rendering.
+
+    window.close_on_mouse_click()
+
 
 # ----------------------------------------------------------------------
 # TODO: 3.
@@ -122,6 +140,29 @@ def draw_circles():
 #   In testing your even_better_draw_circles function,
 #   can you make some fun pictures?
 # ----------------------------------------------------------------------
+
+def  run_test_even_better_draw_circles():
+    print()
+    print('--------------------------------------------------')
+    print('Testing  draw_circles:  See graphics window')
+    print('--------------------------------------------------')
+    even_better_draw_circles()
+
+def  even_better_draw_circles():
+
+    window = rg.RoseWindow(400, 400)
+
+    fill_color = rg.Circle.fill_color('blue')
+    thickness = rg.Circle.outline_thickness('10')
+    outline_color = rg.Circle.outline_color('pink')
+    for k in range(21):
+        circle = rg.Circle(fill_color)
+        circle = rg.Circle(thickness)
+        circle = rg.Circle(outline_color)
+        circle.attach_to(window)
+        window.render(0.05)  # Pauses for 0.05 seconds after rendering.
+
+    window.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
