@@ -12,8 +12,8 @@ def main():
     """ Calls the   TEST   functions in this module. """
     #run_test_draw_circles()
     # Un-comment the next lines when you are ready to use them.
-    #run_test_better_draw_circles()
-    run_test_even_better_draw_circles()
+    run_test_better_draw_circles()
+    #run_test_even_better_draw_circles()
 
 
 # ----------------------------------------------------------------------
@@ -103,9 +103,10 @@ def  run_test_better_draw_circles():
 def  better_draw_circles():
     window = rg.RoseWindow(400, 400)
 
-    radius = rg.Line(100, 300)
+    radius = 0
+    center = rg.Point(200, 200)
     for k in range(12):
-        circle = rg.Circle.radius(k+k)
+        circle = rg.Circle(center, k+k)
         circle.attach_to(window)
         window.render(0.05)  # Pauses for 0.05 seconds after rendering.
 
