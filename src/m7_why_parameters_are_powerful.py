@@ -64,7 +64,7 @@ def draw_circles():
     window.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
-# TODO: 2.
+# DONE: 2.
 #   First, RUN this program.  You will see that draw_circles draws
 #   concentric circles whose radii vary by 10.
 #
@@ -113,7 +113,7 @@ def  better_draw_circles():
 
 
 # ----------------------------------------------------------------------
-# TODO: 3.
+# DONE: 3.
 #   In the previous exercise, you made a MORE POWERFUL version
 #   of draw_circles by introducing a PARAMETER for the amount by
 #   which the radii of the concentric circles increase.
